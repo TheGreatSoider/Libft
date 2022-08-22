@@ -20,11 +20,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	i = 0;
 	if (*lst == '\0')
 		*lst = new;
-	while (i != ft_lstsize(*lst))
+	else
 	{
-		*lst = *lst->next;
-		i++;
+		while (i != ft_lstsize(*lst))
+		{
+			*lst = *lst->next;
+			i++;
+		}
+		t = *lst;
+		t->next = new;
 	}
-	t = *lst;
-	t->next = new;
 }
