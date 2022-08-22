@@ -12,18 +12,11 @@
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 0 && str[i] < 32)
-			return (0);
-		else if (str[i] == 127)
-			return (0);
-		i++;
-	}
+	if (c >= 0 && c < 32)
+		return (0);
+	else if (c == 127)
+		return (0);
 	return (1);
 }

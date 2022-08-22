@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 22:45:55 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:54:55 by cocheong         ###   ########.fr       */
+/*   Created: 2022/08/20 22:11:50 by cocheong          #+#    #+#             */
+/*   Updated: 2022/08/20 22:23:40 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	while (lst != '\0')
+	char	*str;
+	size_t	i;
+	size_t	j;
+
+	str = (char *)malloc(
+			sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	i = 0;
+	j = 0;
+	if (!str)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		(*f)(lst->content);
-		lst->next;
+		str[i] = s1[i];
+		i++;
 	}
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }

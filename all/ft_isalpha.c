@@ -12,16 +12,9 @@
 
 #include "libft.h"
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if ((str[i] > 64 && str[i] < 91) || (str[i] > 96 && str[i] < 123))
-			return (1);
-		i++;
-	}
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
 	return (0);
 }

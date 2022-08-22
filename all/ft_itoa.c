@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int	length(long int n)
+size_t	length(long int n)
 {
 	int	len;
 
 	len = 0;
 	if (n < 0)
 	{
-		nb *= -1;
+		n *= -1;
 		len++;
 	}
 	while (n > 0)

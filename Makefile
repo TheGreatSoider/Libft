@@ -16,9 +16,9 @@ CC	= gcc -Wall -Wextra -Werror
 
 PATH_SRCS	= ./src/
 
-HEADER	= ./includes/
+HEADER	= ./includes
 
-OPTION	= -c -I ${HEADER}
+OPTION	= -c -I${HEADER}
 
 SRCS = $(wildcard ./all/*)
 
@@ -26,9 +26,11 @@ OBJ	= ${SRCS:.c=.o}
 
 all: ${NAME}
 
-${NAME}:
-		${CC} ${OPTION} ${SRCS}
+${NAME}: ${OBJ}
 		ar rc ${NAME} ${OBJ}
+	
+.c.o:		
+		$(CC) ${OPTION} $< -o $(<:.c=.o)
 
 clean:
 		/bin/rm -rf ${OBJ}

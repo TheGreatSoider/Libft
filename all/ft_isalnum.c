@@ -12,17 +12,10 @@
 
 #include "libft.h"
 
-int	ft_isalnum(char *str)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if ((str[i] >= 48 && str[i] <= 57) || (str[i] >= 65 && str[i] <= 90)
-			|| (str[i] >= 97 && str[i] <= 122))
-			return (1);
-		i++;
-	}
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122))
+		return (1);
 	return (0);
 }
