@@ -87,6 +87,7 @@ char **ft_split(const char *s, char c)
 	return (str);
 }
 
+
 // int main (void)
 // {
 // 	char **sstr;
