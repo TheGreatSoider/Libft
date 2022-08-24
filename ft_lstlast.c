@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:45:59 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:52:25 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:16:48 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst->next == NULL)
+	if (lst == NULL)
 		return (lst);
 	while (lst->next != NULL)
 		lst = lst->next;
