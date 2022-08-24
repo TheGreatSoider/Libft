@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:45:35 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 04:22:35 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:31:01 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		t->next = new;
 	}
 }
-
