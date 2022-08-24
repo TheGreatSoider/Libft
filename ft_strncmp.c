@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:43:57 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:44:11 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:37:58 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned i;
+	unsigned int	i;
 
 	i = 0;
 	if (n == 0)

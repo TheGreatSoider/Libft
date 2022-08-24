@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:40:50 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/15 21:07:28 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:37:12 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(void const *p1, void const *p2, size_t n)
 {
 	unsigned char	*c1;
 	unsigned char	*c2;
-	size_t	i;
+	size_t			i;
 
 	c1 = (unsigned char *)p1;
 	c2 = (unsigned char *)p2;

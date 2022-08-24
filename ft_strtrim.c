@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:58 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:22:37 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:32:32 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,23 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str;
 	size_t	i;
-	size_t	a;
-	size_t	z;
+	size_t	beg;
+	size_t	end;
 
-	a = 0;
-	while (s1[a] != '\0' && ft_in_set(s1[a], set) == 0)
-		a++;
-	z = ft_strlen(s1);
-	while (z > a && ft_in_set(s1[z - 1], set) == 0)
-		z--;
-	str = (char *)malloc(sizeof(*s1) * (z - a + 1));
-	if (!str)
+	beg = 0;
+	if (s1 == 0 || set == 0)
+		return (NULL);
+	while (s1[beg] != '\0' && ft_in_set(s1[beg], set) != '\0')
+		beg++;
+	end = ft_strlen(s1);
+	while (end > beg && ft_in_set(s1[end - 1], set) != '\0')
+		end--;
+	str = (char *)malloc(sizeof(*s1) * (end - beg + 1));
+	if (str == 0)
 		return (NULL);
 	i = 0;
-	while (a < z)
-		str[i++] = s1[a++];
+	while (beg < end)
+		str[i++] = s1[beg++];
 	str[i] = '\0';
 	return (str);
 }

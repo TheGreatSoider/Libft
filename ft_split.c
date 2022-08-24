@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:42 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:13:06 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:36:53 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 //s = 0123456789876543210
 //c = 9 
 //
-
-char **ft_split(const char *s, char c)
+//str[0] = 
+char	**ft_split(const char *s, char c)
 {
 	int		i;
-	int 	j;
+	int		j;
 	int		l;
+	int		old_i;
 	char	**str;
 
 	i = 0;
@@ -31,35 +32,37 @@ char **ft_split(const char *s, char c)
 	{
 		if (s[i] != c)
 		{
-			while (s[i] != c)
+			while (s[i] != '\0' && s[i] != c)
 				i++;
 			j++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
-	str = (char **)malloc(sizeof(char *) * (j + 1)); 
-	if (*str == 0)
+	str = (char **)malloc(sizeof(char *) * (j + 1));
+	if (str == 0)
 		return ('\0');
 	i = 0;
 	l = 0;
 	while (s[i] != '\0')
 	{
+		j = 0;
 		if (s[i] != c)
 		{
-			j = i;
-			while (s[i] != c)
+			old_i = i;
+			while (s[i] != '\0' && s[i] != c)
+			{
+				i++;
 				j++;
-			str[l] = malloc(sizeof(char) * (j + 1));
-			while (l != j)
-				str[++l] = ft_substr(s, i, j);
-			str[l] = '\0';
-			i = j;
+			}
+			str[l] = ft_substr(s, old_i, j);
+			l++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
 	return (str);
 }
-
 
 // int main (void)
 // {

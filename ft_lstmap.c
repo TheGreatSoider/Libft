@@ -15,7 +15,7 @@
 //Lst0 lst1 lst2 lst3 lst4
 //Nl0 Nl1 Nl2 Nl3 Nl4
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*t;
 	t_list	*nl;
