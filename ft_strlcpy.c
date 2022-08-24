@@ -6,15 +6,15 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:42:12 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/15 20:52:13 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:56:39 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	if (size > 0)

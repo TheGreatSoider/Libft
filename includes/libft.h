@@ -42,9 +42,9 @@ void			ft_putnbr_fd(int n, int fd);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(const char *s1, const char *s2);
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t			ft_strlcpy(char *dest, const char *src, size_t size);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlen(const char *s);
 char			*ft_strnstr(const char *haystack,
 					const char *needle, size_t len);

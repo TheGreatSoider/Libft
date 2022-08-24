@@ -6,18 +6,44 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:43:28 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/15 20:52:13 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:57:22 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+// size_t	ft_strlcat(char *dst, const char *src, size_t size)
+// {
+// 	char	*buffer;
+// 	size_t	i;
+// 	size_t	res;
+
+// 	buffer = dst;
+// 	i = 0;
+// 	res = 0;
+// 	while (*buffer)
+// 	{
+// 		buffer++;
+// 		i++;
+// 	}
+// 	if (i > size)
+// 		res = size + ft_strlen(src);
+// 	else
+// 		res = i + ft_strlen(src);
+// 	while (i + 1 < size && *src)
+// 	{
+// 		*buffer++ = *src++;
+// 		i++;
+// 	}
+// 	*buffer = '\0';
+// 	return (res);
+// }
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	d;
-	unsigned int	s;
+	size_t	i;
+	size_t	j;
+	size_t	d;
+	size_t	s;
 
 	i = ft_strlen(dest);
 	j = 0;
