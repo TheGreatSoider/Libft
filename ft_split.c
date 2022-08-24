@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:42 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/24 22:36:53 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/24 23:29:42 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@
 //c = 9 
 //
 //str[0] = 
-char	**ft_split(const char *s, char c)
+
+int	word_count(const char *s, char c)
 {
-	int		i;
-	int		j;
-	int		l;
-	int		old_i;
-	char	**str;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	if (s == 0)
-		return ('\0');
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -39,9 +35,16 @@ char	**ft_split(const char *s, char c)
 		if (s[i] != '\0')
 			i++;
 	}
-	str = (char **)malloc(sizeof(char *) * (j + 1));
-	if (str == 0)
-		return ('\0');
+	return (j);
+}
+
+void	seperator(const char *s, char c, char **str)
+{
+	int		i;
+	int		j;
+	int		l;
+	int		old_i;
+
 	i = 0;
 	l = 0;
 	while (s[i] != '\0')
@@ -61,6 +64,19 @@ char	**ft_split(const char *s, char c)
 		if (s[i] != '\0')
 			i++;
 	}
+	str[l] = 0;
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str;
+
+	if (s == 0)
+		return (NULL);
+	str = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (str == 0)
+		return (NULL);
+	seperator(s, c, str);
 	return (str);
 }
 

@@ -6,23 +6,28 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:10:46 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:17:50 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:06:15 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// 123456789
+// -99999999
 
 size_t	length(long int n)
 {
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n *= -1;
 		len++;
 	}
-	while (n > 0)
+	while (n != 0)
 	{
 		n = (n / 10);
 		len++;
@@ -30,31 +35,38 @@ size_t	length(long int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+void	string(long nb, size_t i, char *str)
 {
-	char		*str;
-	long int	nb;
-	size_t		i;
-
-	nb = n;
-	i = 0;
-	str = (char *)malloc((sizeof(char)) * i);
-	if (str == 0)
-		return (NULL);
+	str[i--] = '\0';
 	if (nb == 0)
 	{
-		str[0] = 0;
-		return (str);
+		str[0] = '0';
+		return ;
 	}
 	if (nb < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nb *= -1;
 	}
-	while (nb > 0 && i < length(n))
+	while (nb > 0)
 	{
-		str[i++] = 48 + (nb % 10);
+		str[i] = (nb % 10) + '0';
 		nb = nb / 10;
+		i--;
 	}
+}
+
+char	*ft_itoa(int n)
+{
+	char		*str;
+	long		nb;
+	size_t		i;
+
+	nb = (long)n;
+	i = length(nb);
+	str = (char *)malloc((sizeof(char)) * (i + 1));
+	if (str == NULL)
+		return (NULL);
+	string(nb, i, str);
 	return (str);
 }
