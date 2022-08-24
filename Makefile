@@ -16,11 +16,11 @@ CC	= gcc -Wall -Wextra -Werror
 
 PATH_SRCS	= ./src/
 
-HEADER	= ./includes
+HEADER	= ./includes/
 
-OPTION	= -c -I${HEADER}
+OPTION	= -c -I ${HEADER}
 
-SRCS = $(wildcard ./all/*)
+SRCS = $(wildcard ./*.c)
 
 OBJ	= ${SRCS:.c=.o}
 
