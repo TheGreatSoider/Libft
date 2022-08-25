@@ -50,8 +50,8 @@ char			*ft_strnstr(const char *haystack,
 					const char *needle, size_t len);
 char			*ft_strrchr(const char *str, int c);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
-char			ft_tolower(int c);
-char			ft_toupper(int c);
+int				ft_tolower(int c);
+int				ft_toupper(int c);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char			*ft_itoa(int n);

@@ -6,15 +6,15 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:14:30 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:41:42 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:52:55 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
-		c = c - 32;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	return (c);
 }

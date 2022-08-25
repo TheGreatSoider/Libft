@@ -6,13 +6,13 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:34:25 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/15 20:52:13 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:53:09 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c = c + 32;

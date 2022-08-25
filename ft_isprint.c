@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:36:58 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/15 20:55:14 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:01:22 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 0 && c < 32)
-		return (0);
-	else if (c == 127)
+	if (c <= 31 || c >= 127)
 		return (0);
 	return (1);
 }

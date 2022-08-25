@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:47:45 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/24 22:37:37 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:45:39 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	i;
 
 	i = size * count;
-	if (i == 0 || count != i / size)
+	if (count != i / size)
 		return (NULL);
 	rtn = malloc(i);
 	if (rtn == 0)
