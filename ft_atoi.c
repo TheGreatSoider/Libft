@@ -6,11 +6,12 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:47:20 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 23:08:36 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:58:17 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// #include <stdio.h>
 
 static int	space(char c)
 {
@@ -32,7 +33,7 @@ int	ft_atoi(const char *str)
 	is_neg = 1;
 	while (space(str[i]))
 		i++;
-	if (str[i] == '+' && str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			is_neg = -1;

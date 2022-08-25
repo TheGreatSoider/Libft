@@ -22,29 +22,29 @@ OPTION = -c -I $(HEADER)
 
 SRCS = $(wildcard ./*.c)
 
-OBJ	= ${SRCS:.c=.o}
+OBJ	= $(SRCS:.c=.o)
 
-BONUS = ${wildcard ./*.c}
+BONUS = $(wildcard ./*.c)
 
-BONUS_OBJS = ${BONUS:.c=.o}
+BONUS_OBJS = $(BONUS:.c=.o)
 
-all: ${NAME}
+all: $(NAME)
 
-$(NAME): ${OBJ}
-		ar rcs ${NAME} ${OBJ}
+$(NAME): $(OBJ)
+		ar rcs $(NAME) $(OBJ)
 	
 .c.o:		
-		$(CC) ${OPTION} $< -o $(<:.c=.o)
+		$(CC) $(OPTION) $< -o $(<:.c=.o)
 
 clean:
-		/bin/rm -rf ${OBJ}
+		/bin/rm -rf $(OBJ)
 
 fclean: clean
-		/bin/rm -rf ${NAME}
+		/bin/rm -rf $(NAME)
 
 re: fclean all
 
-bonus: ${OBJS} ${BONUS_OBJS}
-		ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
+bonus: $(OBJ) $(BONUS_OBJS)
+		ar rcs $(NAME) $(OBJ) $(BONUS_OBJs)
 
 .PHONY: all clean fclean re bonus
