@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:13:52 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/24 22:35:12 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 15:14:34 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strchr(const char *str, int c)
 	}
 	if (str[i] == (char)c)
 		return ((char *)(str + i));
-	return ('\0');
+	return (NULL);
 }

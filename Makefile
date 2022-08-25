@@ -16,9 +16,9 @@ CC	= gcc -Wall -Wextra -Werror
 
 PATH_SRCS	= ./src/
 
-HEADER	= ./includes/
+HEADER	= libft.h
 
-OPTION	= -c -I ${HEADER}
+OPTION = -c -I $(HEADER)
 
 SRCS = $(wildcard ./*.c)
 
