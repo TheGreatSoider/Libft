@@ -6,36 +6,46 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:47:20 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 16:46:09 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 23:08:36 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+static int	space(char c)
+{
+	if (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\r' || c == '\v' || c == '\f')
+		return (1);
+	else
+		return (0);
+}
 
 int	ft_atoi(const char *str)
 {
-	long int	i;
-	long int	nbr;
+	long		i;
+	long		nbr;
 	int			is_neg;
 
 	i = 0;
 	nbr = 0;
-	is_neg = 0;
-	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+	is_neg = 1;
+	while (space(str[i]))
 		i++;
-	if (str[i] != '\0' && str[i] == '-')
+	if (str[i] == '+' && str[i] == '-')
 	{
-		is_neg = 1;
+		if (str[i] == '-')
+			is_neg = -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (str[i] != '\0' && ft_isdigit(str[i]))
+	{
 		nbr = (nbr * 10) + (str[i++] - '0');
-	if (is_neg == 1)
-		return (-nbr);
+		if (nbr * is_neg > 2147483647)
+			return (-1);
+		if (nbr * is_neg < -2147483648)
+			return (0);
+	}
 	return (nbr);
 }
 
