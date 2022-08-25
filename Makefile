@@ -31,7 +31,7 @@ BONUS_OBJS = ${BONUS:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-		ar rc ${NAME} ${OBJ}
+		ar rcs ${NAME} ${OBJ}
 	
 .c.o:		
 		$(CC) ${OPTION} $< -o $(<:.c=.o)
@@ -45,6 +45,6 @@ fclean: clean
 re: fclean all
 
 bonus: ${OBJS} ${BONUS_OBJS}
-		ar rc ${NAME} ${OBJS} ${BONUS_OBJS}
+		ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
 .PHONY: all clean fclean re bonus
