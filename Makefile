@@ -30,7 +30,7 @@ BONUS_OBJS = ${BONUS:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
+$(NAME): ${OBJ}
 		ar rcs ${NAME} ${OBJ}
 	
 .c.o:		
