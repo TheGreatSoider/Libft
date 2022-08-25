@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:47:20 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 23:58:17 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/26 00:21:38 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,16 @@ int	ft_atoi(const char *str)
 		if (nbr * is_neg < -2147483648)
 			return (0);
 	}
-	return (nbr);
+	return (nbr * is_neg);
 }
 
 /*
-int main(void)
+int	main(void)
 {
-	printf("%d\n", ft_atoi("9223372036854775809"));
-	printf("%d\n", atoi("9223372036854775809"));
-	printf("%d\n", ft_atoi("-9223372036854775808"));
-	printf("%d\n", atoi("-9223372036854775808"));
+	printf("%d\n", ft_atoi("7534"));
+	printf("%d\n", atoi("7534"));
+	printf("%d\n", ft_atoi("-7534"));
+	printf("%d\n", atoi("-7534"));
 	return (0);
 }
-*/
+/*
