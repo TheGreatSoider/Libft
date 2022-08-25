@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:42 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/24 23:29:42 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:40:35 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 //
 //str[0] = 
 
-int	word_count(const char *s, char c)
+static int	word_count(const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -38,7 +38,7 @@ int	word_count(const char *s, char c)
 	return (j);
 }
 
-void	seperator(const char *s, char c, char **str)
+static void	seperator(const char *s, char c, char **str)
 {
 	int		i;
 	int		j;

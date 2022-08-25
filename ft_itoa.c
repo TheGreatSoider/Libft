@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:10:46 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 04:06:15 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:40:36 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // 123456789
 // -99999999
 
-size_t	length(long int n)
+static size_t	length(long int n)
 {
 	int	len;
 
@@ -35,7 +35,7 @@ size_t	length(long int n)
 	return (len);
 }
 
-void	string(long nb, size_t i, char *str)
+static void	string(long nb, size_t i, char *str)
 {
 	str[i--] = '\0';
 	if (nb == 0)

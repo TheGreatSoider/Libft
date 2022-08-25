@@ -6,13 +6,13 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:58 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/24 22:32:32 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:40:37 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_in_set(char c, const char *set)
+static int	ft_in_set(char c, const char *set)
 {
 	size_t	i;
 
