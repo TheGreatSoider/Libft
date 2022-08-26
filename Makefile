@@ -12,29 +12,29 @@
 
 NAME	= libft.a
 
-CC	= gcc -Wall -Wextra -Werror
+CC	= gcc
+
+CFLAGS = -Wall -Wextra -Werror -c
 
 PATH_SRCS	= ./src/
-
-HEADER	= libft.h
-
-OPTION = -c -I $(HEADER)
 
 SRCS = $(wildcard ./*.c)
 
 OBJ	= $(SRCS:.c=.o)
 
-BONUS = $(wildcard ./*.c)
+BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c 
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
+AR = ar rcs
+
 all: $(NAME)
 
-$(NAME): $(OBJ)
-		ar rcs $(NAME) $(OBJ)
-	
 .c.o:		
-		$(CC) $(OPTION) $< -o $(<:.c=.o)
+		$(CC) $(CFLAGS) $< -o $(<:.c=.o)
+
+$(NAME): $(OBJ)
+		$(AR) $(NAME) $(OBJ)
 
 clean:
 		/bin/rm -rf $(OBJ)
@@ -44,7 +44,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJ) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJ) $(BONUS_OBJs)
+bonus: $(BONUS_OBJS)
+		$(AR) $(NAME) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus

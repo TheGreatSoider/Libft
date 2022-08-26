@@ -6,12 +6,11 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:47:20 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/26 00:21:38 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/26 17:21:55 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
 static int	space(char c)
 {
@@ -49,14 +48,3 @@ int	ft_atoi(const char *str)
 	}
 	return (nbr * is_neg);
 }
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_atoi("7534"));
-	printf("%d\n", atoi("7534"));
-	printf("%d\n", ft_atoi("-7534"));
-	printf("%d\n", atoi("-7534"));
-	return (0);
-}
-/*

@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 19:48:19 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/25 04:04:21 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/26 17:52:44 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 	size_t	i;
 
-	if (!s1)
-		return (NULL);
 	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + 1));
 	if (!str)
 		return (NULL);
