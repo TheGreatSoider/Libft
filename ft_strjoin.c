@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:50 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:23:40 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/26 20:19:46 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	i;
 	size_t	j;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	str = (char *)malloc(
-			sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+			sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	i = 0;
 	j = 0;
 	if (!str)

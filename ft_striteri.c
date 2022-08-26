@@ -6,7 +6,7 @@
 /*   By: cocheong <cocheong@student.42kl.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:11:46 by cocheong          #+#    #+#             */
-/*   Updated: 2022/08/20 22:23:51 by cocheong         ###   ########.fr       */
+/*   Updated: 2022/08/26 20:07:08 by cocheong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	i;
 	int	j;
 
-	i = ft_strlen(s);
-	j = 0;
 	if (s != NULL && f != NULL)
 	{
+		i = ft_strlen(s);
+		j = 0;
 		while (j < i)
 		{
 			(*f)(j, s);
